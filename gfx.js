@@ -152,6 +152,13 @@ canvas_top.onmousemove = (e) => {
   camera(X,Y,25,25);
   pixel(25,25);
   render(25,30);
-  
+};
 
+canvas_side.onmousemove = (e) => {
+  ctx_side.clearRect(0, 0, 300, 300);
+  ctx_side.clearRect(0, 0, 300, 300);
+  make_grid();
+  X = e.offsetX/A;
+  Y = e.offsetY/A;
+  ctx_side.fillRect(X,Y);
 };
