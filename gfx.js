@@ -5,12 +5,7 @@ canvas_top.height=300;
 document.body.appendChild(canvas_top)
 canvas_top.style.border = '1px solid red'
 
-canvas_side = document.createElement('canvas')
-ctx_side = canvas_side.getContext('2d')
-canvas_side.width=300;
-canvas_side.height=300;
-document.body.appendChild(canvas_side)
-canvas_side.style.border = '1px solid red'
+
 
 const A = 5;
 const B = A-1;
@@ -23,11 +18,7 @@ ctx_top.fillStyle = 'rgba(255,0,255,0.1)';
     ctx_top.fillRect(i,j,B,B)
 ctx_top.fillStyle = 'red';
 
-ctx_side.fillStyle = 'rgba(255,0,255,0.1)';
-  for(let i = 0; i<=S; i+=A)
-   for(let j = 0; j<=S; j+=A)
-    ctx_side.fillRect(i,j,B,B)
-ctx_side.fillStyle = 'red';
+
 
 }
 
@@ -145,7 +136,7 @@ render = (x,y)=>{
 
 canvas_top.onmousemove = (e) => {
   ctx_top.clearRect(0, 0, 300, 300);
-  ctx_side.clearRect(0, 0, 300, 300);
+
   make_grid();
   X = e.offsetX/A;
   Y = e.offsetY/A;
@@ -154,11 +145,4 @@ canvas_top.onmousemove = (e) => {
   render(25,30);
 };
 
-canvas_side.onmousemove = (e) => {
-  ctx_side.clearRect(0, 0, 300, 300);
-  ctx_side.clearRect(0, 0, 300, 300);
-  make_grid();
-  X = e.offsetX/A;
-  Y = e.offsetY/A;
-  ctx_side.fillRect(X,Y);
-};
+
